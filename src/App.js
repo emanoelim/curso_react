@@ -2,16 +2,6 @@ import React from 'react';
 
 
 // componentes
-const BemVindo = () => <h2>Bem vindo(a)!</h2>
-
-const BemVindo2 = (props) => {
-  return(
-    <div>
-      <h2>Bem vindo(a) {props.nome}!</h2>
-    </div>
-  );
-}
-
 const Equipe = (props) => {
   return(
     <div>
