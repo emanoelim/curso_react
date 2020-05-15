@@ -1,7 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-// componentes
+// class components
+class Equipe extends Component {
+  render() {
+    return(
+      <div>
+        <Sobre nome={this.props.nome}
+               idade={this.props.idade}
+               cargo={this.props.cargo}/>
+        <Social facebook={this.props.facebook}
+                linkedin={this.props.linkedin}/>
+      </div>
+    );
+  }
+}
+
+class Sobre extends Component {
+  render() {
+    return(
+      <div>
+        <h3>Olá! Sou o(a) {this.props.nome}. Tenho {this.props.idade} anos e sou {this.props.cargo}.</h3>
+      </div>
+    );
+  }
+}
+
+class Social extends Component {
+  render() {
+    return(
+      <div>
+        <a href={this.props.facebook}> Facebook | </a>
+        <a href={this.props.linkedin}> LinkedIn</a>
+      </div>
+    );
+  }
+}
+
+// components
+/*
 const Equipe = (props) => {
   return(
     <div>
@@ -14,8 +51,7 @@ const Equipe = (props) => {
 const Sobre = (props) => {
   return(
     <div>
-      <h3>Olá! Sou o(a) {props.nome}. Tenho {props.idade} anos e trabalho como
-      {props.cargo}.</h3>
+      <h3>Olá! Sou o(a) {props.nome}. Tenho {props.idade} anos e trabalho como {props.cargo}.</h3>
     </div>
   );
 }
@@ -28,6 +64,7 @@ const Social = (props) => {
       </div>
     );
 }
+*/
 
 
 function App() {
