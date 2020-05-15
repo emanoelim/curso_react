@@ -37,6 +37,41 @@ class Social extends Component {
   }
 }
 
+class Contador extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contador: 0
+    }
+
+    this.incrementar = this.incrementar.bind(this);
+    this.decrementar = this.decrementar.bind(this);
+  }
+
+  incrementar() {
+    let state = this.state;
+    state.contador += 1;
+    this.setState(state);
+  }
+
+  decrementar() {
+    let state = this.state;
+    state.contador -= 1;
+    this.setState(state);
+  }
+
+  render() {
+    return(
+      <div>
+        <button onClick={this.decrementar}>Decrementar</button>
+        {this.state.contador}
+        <button onClick={this.incrementar}>Incrementar</button>
+      </div>
+    );
+  }
+}
+
+
 // components
 /*
 const Equipe = (props) => {
@@ -75,6 +110,7 @@ function App() {
               idade="28"
               facebook="https://www.facebook.com/emanoeli.madalosso"
               linkedin="https://www.linkedin.com/in/emanoeli-madalosso-75610396/"/>
+      <Contador/>
     </div>
   )
 }
