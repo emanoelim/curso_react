@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './header.css';
 
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return(
-      <div>
-        <h1>Header</h1>
-        <hr/>
+      <div className="header">
+        <Link to="/">Filmaria</Link>
       </div>
     );
   }

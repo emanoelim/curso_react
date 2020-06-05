@@ -1,19 +1,45 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import './home.css';
 
 class Home extends Component {
+
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      filmes: [],
+    };
+
+    this.loadFilmes = this.loadFilmes.bind(this);
+  }
+
+  componentDidMount() {
+    this.loadFilmes();
+  }
+
+  loadFilmes() {
+    let url = "https://sujeitoprogramador.com/r-api/?api=filmes/";
+    fetch(url)
+    .then((r) => r.json())
+    .then((json) => {
+      this.setState({filmes: json});
+    });
   }
 
   render() {
     return(
-      <div>
-        <h2>Bem vindo</h2>
-        <br/>
-        <Link to="/sobre">Ir para sobre</Link>
+      <div className="container">
+        <div className="lista-filmes">
+          {this.state.filmes.map((filme) => {
+            return(
+              <article className="filme" key={filme.id}>
+                <strong>{filme.nome}</strong>
+                <img className="img" src={filme.foto} alt="Capa"/>
+                <Link to="/">Acessar</Link>
+              </article>
+            );
+          })}
+        </div>
       </div>
     );
   }
