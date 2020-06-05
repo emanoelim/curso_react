@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Routes from './routes';
+import { Link } from 'react-router-dom';
 
 
-class App extends Component {
+class Sobre extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -12,10 +11,12 @@ class App extends Component {
   render() {
     return(
       <div>
-        <Routes/>
+        <h2>Sobre</h2>
+        <br/>
+        <Link to="/">Ir para home</Link>
       </div>
     );
   }
 }
 
-export default App;
+export default Sobre;
