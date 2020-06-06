@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css'
+import { MainApp } from './styles.js'
 import Routes from './routes';
 
 
@@ -11,9 +11,9 @@ class App extends Component {
 
   render() {
     return(
-      <div className="app">
+      <MainApp>
         <Routes/>
-      </div>
+      </MainApp>
     );
   }
 }
